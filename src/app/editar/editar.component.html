@@ -1,0 +1,56 @@
+<form [formGroup]="formCadastro">
+    <mat-card>
+        <mat-card-content fxLayout="row">
+
+            <!-- id -->
+            <mat-form-field>
+                <mat-label>Id</mat-label>
+                <input id="id" formControlName="id" matInput placeholder="Id" type="text" />
+            </mat-form-field>
+            <br>
+            <!-- name -->
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input id="nome" formControlName="nome" matInput placeholder="Nome" type="text" />
+                <mat-error *ngIf="formCadastro.controls['nome'].hasError('required')">
+                    Nome é obrigatório
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <!-- name -->
+            <mat-form-field>
+                <mat-label>Ano Lote</mat-label>
+                <input id="anoLote" formControlName="anoLote" matInput placeholder="2022" type="text" />
+                <mat-error *ngIf="formCadastro.controls['anoLote'].hasError('required')">
+                    Ano do lote é obrigatório
+                </mat-error>
+                <mat-error *ngIf="formCadastro.controls['anoLote'].hasError('max')">
+                    Valor máximo é 2022
+                </mat-error>
+
+                <mat-error *ngIf="formCadastro.controls['anoLote'].hasError('min')">
+                    Valor mínimo é 1992
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <!-- fabricante -->
+            <mat-form-field appearance="fill">
+                <mat-label>Escolha o fabricante</mat-label>
+                <mat-select formControlName="fabricante" [ngModel]="selectValue">
+                  <mat-option value="1">PFIZER</mat-option>
+                  <mat-option value="2">SINOVAC</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+            
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button color="primary" mat-raised-button (click)="update()">
+                Atualizar
+            </button>
+
+        </mat-card-actions>
+    </mat-card>
+</form>

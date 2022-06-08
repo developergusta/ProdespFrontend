@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Atenção</h1>
+<div mat-dialog-content>
+  <p>Deseja confirmar a exclusão deste imunobiológico?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Não, cancelar.</button>
+  <button mat-button (click)="confirmaExclusao()" cdkFocusInitial>Ok</button>
+</div> 
