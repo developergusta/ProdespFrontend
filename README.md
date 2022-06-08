@@ -10,4 +10,5 @@ Angular CLI V14.0.0
 `npm uninstall -g @angular/cli`
 `npm install -g @angular/cli@14.0.0`
 
+Execute `npm i` para instalar os módulos Node
 Execute `ng serve -o` após executar a WebApi e a aplicação abrirá no browser
